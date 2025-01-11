@@ -7,9 +7,11 @@ import doctorModel from "../models/doctorModel.js"
 ///API for adding doctor
 const addDoctor = async (req,res)=>{
     try {
-        const {name,email,password,speciality,degree,experience,about,fees,address} = req.body
-        const imageFile=req.file
+        const { name, email, password, speciality, degree, experience, about, fees, address  } = req.body
+        const imageFile = req.file;
 
+        console.log({name,email,password,speciality,degree,experience,about,fees,address},imageFile);
+        
         //checking for all  data to add doctor
         if(!name || !email ||!password|| !speciality ||!degree||!experience||!about||!fees||!address){
             return res.json({success:false,message:"Missing details"})
@@ -31,8 +33,10 @@ const addDoctor = async (req,res)=>{
         const hashedPassword = await bcrypt.hash(password, salt)
 
         //upload image to cloudinary
-        const imageUpload = await cloudinary.uploader.upload(imageFile.path, {resource_type:"image"})
+        const imageUpload = await cloudinary.uploader.upload(imageFile.path, {resource_type:'image'});
         const imageUrl = imageUpload.secure_url
+        console.log(imageUrl);
+        
 
         const doctorData = {
             name,

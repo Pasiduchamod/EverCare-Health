@@ -3,6 +3,7 @@ import { AppContext } from '../context/AppContext'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
+import { assets } from '../assets/assets'
 
 
 const Login = () => {
@@ -52,6 +53,7 @@ const Login = () => {
     <div>
       <form onSubmit={onSubmitHandler} className='min-h-[80vh] flex items-center'>
         <div className='flex flex-col gap-3 m-auto items-start p-8 min-w-[340px] sm:min-w-96 border rounded-xl text-zinc-600 text-sm shadow-lg'>
+          <img className='w-40 items-center mb-5'  src={assets.logo}></img>
           <p className='text-2xl font-semibold'>{state === 'Sign Up' ? "Create Account" : "Login"}</p>
           <p>Please {state === 'Sign Up' ? "sign up" : "log in"} to book appointment</p>
           {

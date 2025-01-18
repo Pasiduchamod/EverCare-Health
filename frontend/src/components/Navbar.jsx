@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <div className='flex items-center justify-between text-sm py-4 mb-5 border-b border-b-gray-400'>
       <img onClick={()=>navigate('/')} className='w-44 cursor-pointer' src={assets.logo} alt='logo'/>
-      <ul className='hidden md:flex items-start gap-5 font-medium'>
+      <ul className='hidden md:flex items-start gap-14 font-medium'>
         <NavLink to='/'>
             <li className='py-1'>HOME</li>
             <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden'/>
@@ -52,7 +52,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-            :<button onClick={()=>navigate('/login')} className='bg-white text-primary px-8 py-3 rounded-full hidden md:block border-2 border-primary'>Create account</button>
+            :<button onClick={()=>navigate('/login')} className='bg-white text-primary px-8 py-3 rounded-full hidden md:block border-2 border-primary'>Sign Up / Log In</button>
         }
         <img onClick={()=>setShowMenu(true)} className='w-6 md:hidden' src={assets.menu_icon}/>
         {/*--------------Mobile Menu---------*/}
